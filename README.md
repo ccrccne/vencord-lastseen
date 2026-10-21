@@ -38,8 +38,6 @@ Discord envía a tu cliente los cambios de estado de las personas que ves (conec
 - pnpm (se instala con un comando, ver más abajo).
 - Conexión a internet para descargar las dependencias (unos 200 MB).
 
-Todo es gratuito.
-
 ## Instalación paso a paso
 Los plugins propios no están en el instalador oficial de Vencord. Los plugins van compilados dentro de Vencord, así que hay que descargar su código fuente, añadir este plugin y volver a compilar. Los ajustes y los plugins que ya tengas no se pierden.
 
