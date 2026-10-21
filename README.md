@@ -2,7 +2,7 @@
 
 Plugin de Vencord que muestra la **última vez que viste conectado** a alguien ("últ. vez hace 2 h"), junto a su nombre en los mensajes y en la lista de miembros. Al pasar el ratón aparece la fecha completa y la plataforma desde la que estaba conectado (móvil, escritorio o web).
 
-Solo funciona en la aplicación de escritorio de Discord con Vencord instalado.
+Funciona en la aplicación de escritorio de Discord con **Vencord** o con **BetterDiscord** (ver [Versión para BetterDiscord](#versión-para-betterdiscord)).
 
 ## Índice
 1. [Cómo funciona](#cómo-funciona)
@@ -13,8 +13,9 @@ Solo funciona en la aplicación de escritorio de Discord con Vencord instalado.
 6. [Actualizar](#actualizar)
 7. [Desinstalar](#desinstalar)
 8. [Problemas frecuentes](#problemas-frecuentes)
-9. [Estructura del repositorio](#estructura-del-repositorio)
-10. [Aviso](#aviso)
+9. [Versión para BetterDiscord](#versión-para-betterdiscord)
+10. [Estructura del repositorio](#estructura-del-repositorio)
+11. [Aviso](#aviso)
 
 ## Cómo funciona
 Discord envía a tu cliente los cambios de estado de las personas que ves (conectado, ausente, no molestar, desconectado), junto con la plataforma desde la que están. El plugin escucha esos cambios:
@@ -125,16 +126,34 @@ Para actualizar solo este plugin, vuelve a copiar la carpeta `lastSeen` a `src/u
 - **Error de compilación en `pnpm build`:** Vencord cambia con frecuencia. Si una actualización rompe el plugin, abre un *issue* en este repositorio con el mensaje de error.
 - **Se ve "últ. vez" pero con datos viejos o vacíos:** el plugin solo guarda lo que ve con Discord abierto. Dale tiempo.
 
+## Versión para BetterDiscord
+BetterDiscord es otro mod de Discord. Allí los plugins son un único archivo que se copia a una carpeta, sin compilar nada.
+
+**Diferencia con la versión de Vencord:** en BetterDiscord la información se ve **haciendo clic derecho sobre un usuario**. Al final del menú aparece "Últ. vez hace X (plataforma)". Si pulsas esa opción, se muestra un aviso con la fecha y hora exactas. No aparece junto al nombre en los mensajes.
+
+### Instalación
+1. Instala [BetterDiscord](https://betterdiscord.app) si no lo tienes.
+2. Descarga el archivo [`betterdiscord/LastSeen.plugin.js`](betterdiscord/LastSeen.plugin.js) de este repositorio (ábrelo y pulsa el botón de descarga, **Download raw file**).
+3. En Discord, ve a **Ajustes de usuario → BetterDiscord → Plugins** y pulsa **Open Plugins Folder**.
+4. Copia `LastSeen.plugin.js` en esa carpeta.
+5. Vuelve a la lista de plugins y activa **LastSeen**.
+
+Las mismas [limitaciones](#limitaciones) se aplican: empieza vacío, solo registra con Discord abierto y no ve a los usuarios invisibles.
+
+No uses Vencord y BetterDiscord a la vez: instala solo uno de los dos.
+
 ## Estructura del repositorio
 ```
 vencord-lastseen/
 ├── lastSeen/
-│   └── index.tsx   # código del plugin
+│   └── index.tsx             # plugin para Vencord
+├── betterdiscord/
+│   └── LastSeen.plugin.js    # plugin para BetterDiscord
 ├── .gitignore
 └── README.md
 ```
 
 ## Aviso
-Los mods de cliente como Vencord van contra los Términos de Servicio de Discord. En la práctica rara vez se sanciona su uso, pero el riesgo existe. Este plugin solo lee datos que Discord ya envía a tu cliente y no automatiza ninguna acción. Úsalo bajo tu propia responsabilidad.
+Los mods de cliente como Vencord y BetterDiscord van contra los Términos de Servicio de Discord. En la práctica rara vez se sanciona su uso, pero el riesgo existe. Este plugin solo lee datos que Discord ya envía a tu cliente y no automatiza ninguna acción. Úsalo bajo tu propia responsabilidad.
 
 Autor: **cancercocaine** (Discord) · [ccrccne](https://github.com/ccrccne) (GitHub)
