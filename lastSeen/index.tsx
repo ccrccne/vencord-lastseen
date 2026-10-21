@@ -1,6 +1,4 @@
 import * as DataStore from "@api/DataStore";
-import { addMemberListDecorator, removeMemberListDecorator } from "@api/MemberListDecorators";
-import { addMessageDecoration, removeMessageDecoration } from "@api/MessageDecorations";
 import definePlugin from "@utils/types";
 import { FluxDispatcher, PresenceStore, Tooltip, useStateFromStores } from "@webpack/common";
 
@@ -79,21 +77,19 @@ export default definePlugin({
     description: "Muestra la última vez que viste conectado a alguien. Solo registra mientras Discord está abierto.",
     authors: [{ name: "cancercocaine", id: 1425095870399123662n }],
 
+    renderMemberListDecorator: ({ user }) =>
+        user ? <LastSeen userId={user.id} compact /> : null,
+
+    renderMessageDecoration: ({ message }) =>
+        message?.author ? <LastSeen userId={message.author.id} /> : null,
+
     async start() {
         seen = (await DataStore.get<Record<string, Seen>>(STORE_KEY)) ?? {};
         FluxDispatcher.subscribe("PRESENCE_UPDATES", onPresence);
-        addMemberListDecorator("last-seen", ({ user }) =>
-            user ? <LastSeen userId={user.id} compact /> : null
-        );
-        addMessageDecoration("last-seen", ({ message }) =>
-            message?.author ? <LastSeen userId={message.author.id} /> : null
-        );
     },
 
     stop() {
         FluxDispatcher.unsubscribe("PRESENCE_UPDATES", onPresence);
-        removeMemberListDecorator("last-seen");
-        removeMessageDecoration("last-seen");
         DataStore.set(STORE_KEY, seen);
     }
 });
