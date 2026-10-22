@@ -1,8 +1,10 @@
-# LastSeen para Vencord
+# LastSeen
 
-Plugin de Vencord que muestra la **última vez que viste conectado** a alguien ("últ. vez hace 2 h"), junto a su nombre en los mensajes y en la lista de miembros. Al pasar el ratón aparece la fecha completa y la plataforma desde la que estaba conectado (móvil, escritorio o web).
+Discord te dice que alguien está desconectado, pero no desde cuándo. LastSeen sí.
 
-Funciona en la aplicación de escritorio de Discord con **Vencord** o con **BetterDiscord** (ver [Versión para BetterDiscord](#versión-para-betterdiscord)).
+Cada vez que alguien se desconecta, el plugin se guarda la hora. Desde ahí, al lado de su nombre (en el chat y en la lista de miembros) te sale algo como "últ. vez hace 2 h". Pasas el ratón y ves la fecha exacta y si estaba en el móvil, en el PC o en la web.
+
+Sirve para **Vencord** y para **BetterDiscord** ([ver más abajo](#versión-para-betterdiscord)).
 
 ## Índice
 1. [Cómo funciona](#cómo-funciona)
