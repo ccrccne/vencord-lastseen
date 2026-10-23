@@ -6,6 +6,10 @@ Cada vez que alguien se desconecta, el plugin se guarda la hora. Desde ahí, al 
 
 Sirve para **Vencord** y para **BetterDiscord** ([ver más abajo](#versión-para-betterdiscord)).
 
+![Chat y lista de miembros mostrando hace cuánto se desconectó cada persona](images/lastseen.png)
+
+<sub>Demostración con nombres y fotos inventados.</sub>
+
 ## Índice
 1. [Cómo funciona](#cómo-funciona)
 2. [Limitaciones](#limitaciones)
@@ -133,6 +137,8 @@ BetterDiscord es otro mod de Discord. Allí los plugins son un único archivo qu
 
 **Diferencia con la versión de Vencord:** en BetterDiscord la información se ve **haciendo clic derecho sobre un usuario**. Al final del menú aparece "Últ. vez hace X (plataforma)". Si pulsas esa opción, se muestra un aviso con la fecha y hora exactas. No aparece junto al nombre en los mensajes.
 
+![Menú de clic derecho con la opción "Últ. vez hace 2 h (móvil)"](images/lastseen-betterdiscord.png)
+
 ### Instalación
 1. Instala [BetterDiscord](https://betterdiscord.app) si no lo tienes.
 2. Descarga el archivo [`betterdiscord/LastSeen.plugin.js`](betterdiscord/LastSeen.plugin.js) de este repositorio (ábrelo y pulsa el botón de descarga, **Download raw file**).
@@ -151,6 +157,7 @@ vencord-lastseen/
 │   └── index.tsx             # plugin para Vencord
 ├── betterdiscord/
 │   └── LastSeen.plugin.js    # plugin para BetterDiscord
+├── images/                 # capturas de demostración
 ├── .gitignore
 └── README.md
 ```
