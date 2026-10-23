@@ -157,7 +157,7 @@ vencord-lastseen/
 │   └── index.tsx             # plugin para Vencord
 ├── betterdiscord/
 │   └── LastSeen.plugin.js    # plugin para BetterDiscord
-├── images/                 # capturas de demostración
+├── images/                   # capturas de demostración
 ├── .gitignore
 └── README.md
 ```
